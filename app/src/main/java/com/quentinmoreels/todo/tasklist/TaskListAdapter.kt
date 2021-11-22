@@ -3,14 +3,20 @@ package com.quentinmoreels.todo.tasklist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.quentinmoreels.todo.R
 
+object TasksDiffCallback : DiffUtil.ItemCallback<Task>() {
+    override fun areItemsTheSame(oldItem: Task, newItem: Task) = oldItem.id == newItem.id
+        // are they the same "entity" ? (usually same id)
+    override fun areContentsTheSame(oldItem: Task, newItem: Task) = oldItem.description == newItem.description
+    // do they have the same data ? (content)
+}
 
-
-
-class TaskListAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<TaskListAdapter.TaskViewHolder>() {
+class TaskListAdapter(private val taskList: List<Task>) : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(TasksDiffCallback) {
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(task: Task) {
             val textViewTitle = itemView.findViewById<TextView>(R.id.task_title)
@@ -27,9 +33,5 @@ class TaskListAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<T
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         holder.bind(taskList[position])
-    }
-
-    override fun getItemCount(): Int {
-        return taskList.size
     }
 }
