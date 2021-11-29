@@ -3,11 +3,13 @@ package com.quentinmoreels.todo.tasklist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.quentinmoreels.todo.R
+import java.util.*
 
 object TasksDiffCallback : DiffUtil.ItemCallback<Task>() {
     override fun areItemsTheSame(oldItem: Task, newItem: Task) = oldItem.id == newItem.id
@@ -16,13 +18,26 @@ object TasksDiffCallback : DiffUtil.ItemCallback<Task>() {
     // do they have the same data ? (content)
 }
 
-class TaskListAdapter(private val taskList: List<Task>) : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(TasksDiffCallback) {
+class TaskListAdapter() : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(TasksDiffCallback) {
+    var onClickDelete: (Task) -> Unit = {}
+    var onClickModify: (Task) -> Unit = {}
+
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(task: Task) {
             val textViewTitle = itemView.findViewById<TextView>(R.id.task_title)
             val textViewDescription = itemView.findViewById<TextView>(R.id.task_description)
             textViewTitle.text = task.title
             textViewDescription.text = task.description
+
+            val deleteButton = itemView.findViewById<ImageButton>(R.id.butDelete)
+            deleteButton.setOnClickListener { view ->
+                onClickDelete(task)
+            }
+
+            val modifyButton = itemView.findViewById<ImageButton>(R.id.butModifyTask)
+            modifyButton.setOnClickListener { view ->
+                onClickModify(task)
+            }
         }
     }
 
@@ -32,6 +47,6 @@ class TaskListAdapter(private val taskList: List<Task>) : ListAdapter<Task, Task
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        holder.bind(taskList[position])
+        holder.bind(currentList[position])
     }
 }
