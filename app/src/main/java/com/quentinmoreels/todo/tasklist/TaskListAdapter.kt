@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.quentinmoreels.todo.R
-import java.util.*
 
 object TasksDiffCallback : DiffUtil.ItemCallback<Task>() {
     override fun areItemsTheSame(oldItem: Task, newItem: Task) = oldItem.id == newItem.id
@@ -18,9 +17,7 @@ object TasksDiffCallback : DiffUtil.ItemCallback<Task>() {
     // do they have the same data ? (content)
 }
 
-class TaskListAdapter() : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(TasksDiffCallback) {
-    var onClickDelete: (Task) -> Unit = {}
-    var onClickModify: (Task) -> Unit = {}
+class TaskListAdapter(val listener: TaskListListener) : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(TasksDiffCallback) {
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(task: Task) {
@@ -31,12 +28,12 @@ class TaskListAdapter() : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(Task
 
             val deleteButton = itemView.findViewById<ImageButton>(R.id.butDelete)
             deleteButton.setOnClickListener { view ->
-                onClickDelete(task)
+                listener.onClickDelete(task)
             }
 
             val modifyButton = itemView.findViewById<ImageButton>(R.id.butModifyTask)
             modifyButton.setOnClickListener { view ->
-                onClickModify(task)
+                listener.onClickModify(task)
             }
         }
     }

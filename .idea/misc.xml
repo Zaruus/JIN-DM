@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_authentication.xml" value="0.1" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_form.xml" value="0.25" />
-        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_task_list.xml" value="0.18" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_main.xml" value="0.1982851018220793" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_user_info.xml" value="0.22" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/content_authentication.xml" value="0.1" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_authentication.xml" value="0.18" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_signup.xml" value="0.22" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_task_list.xml" value="0.292259083728278" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/item_task.xml" value="0.25" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskListFragment">
+
+    <fragment
+        android:id="@+id/AuthenticationFragment"
+        android:name="com.quentinmoreels.todo.authentication.AuthenticationFragment"
+        android:label="Authentification Fragment"
+        tools:layout="@layout/fragment_authentication">
+
+        <action
+            android:id="@+id/action_AuthenticateFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_AuthenticationFragment_to_SignupFragment"
+            app:destination="@id/SignupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.quentinmoreels.todo.authentication.LoginFragment"
+        android:label="Login Fragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_LoginFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SignupFragment"
+        android:name="com.quentinmoreels.todo.authentication.SignupFragment"
+        android:label="SignUp Fragment"
+        tools:layout="@layout/fragment_signup">
+    </fragment>
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.quentinmoreels.todo.tasklist.TaskListFragment"
+        android:label="TaskList Fragment"
+        tools:layout="@layout/fragment_task_list">
+        <action
+            android:id="@+id/action_TaskListFragment_to_AuthenticateFragment"
+            app:destination="@id/AuthenticationFragment" />
+    </fragment>
+</navigation>
