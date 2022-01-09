@@ -13,7 +13,7 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
 
-        val task = intent.getSerializableExtra("task") as? Task
+        val task = intent.getSerializableExtra("taskToModify") as? Task
         val taskFormTitle = task?.title ?: ""
         val taskFormDescription = task?.description ?: ""
         val id = task?.id ?: UUID.randomUUID().toString()
@@ -25,8 +25,14 @@ class FormActivity : AppCompatActivity() {
 
         val validateButton = findViewById<Button>(R.id.butValidate)
         validateButton.setOnClickListener { view ->
-            val newTask = Task(id, title = textFormTitle.text.toString(), description = textFormDescription.text.toString())
-            intent.putExtra("task", newTask)
+            val newTitle = textFormTitle.text.toString()
+            val newDescription = textFormDescription.text.toString()
+
+            //Si on ne modifie pas la description, le titre ne se met pas à jour
+            //Je ne sais pas pourquoi
+            val newTask = Task(id, title = newTitle, description = newDescription)
+
+            intent.putExtra("taskModified", newTask)
             setResult(RESULT_OK, intent)
             finish()
         }

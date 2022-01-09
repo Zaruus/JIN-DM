@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_authentication.xml" value="0.1" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_authentication.xml" value="0.33" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_form.xml" value="0.25" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_main.xml" value="0.1982851018220793" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/activity_user_info.xml" value="0.22" />
@@ -13,7 +16,7 @@
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_signup.xml" value="0.22" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/fragment_task_list.xml" value="0.292259083728278" />
-        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/item_task.xml" value="0.25" />
+        <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/layout/item_task.xml" value="0.22" />
         <entry key="..\:/Users/quent/StudioProjects/ToDoQuentinMoreels/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>

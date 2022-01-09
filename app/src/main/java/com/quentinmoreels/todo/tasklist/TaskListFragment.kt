@@ -45,7 +45,7 @@ class TaskListFragment : Fragment() {
 
         override fun onClickModify(task: Task) {
             val intent = Intent(activity, FormActivity::class.java)
-            intent.putExtra("task", task)
+            intent.putExtra("taskToModify", task)
             formLauncher.launch(intent)
         }
     }
@@ -146,7 +146,7 @@ class TaskListFragment : Fragment() {
     val formLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == AppCompatActivity.RESULT_OK) {
             val recyclerView = binding.recyclerView
-            val task = result.data?.getSerializableExtra("task") as Task
+            val task = result.data?.getSerializableExtra("taskModified") as Task
             recyclerView.adapter = adapter
 
             val oldTask = taskListViewModel.taskList.value.firstOrNull { it.id == task.id }

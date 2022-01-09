@@ -16,12 +16,15 @@ import androidx.navigation.fragment.findNavController
 import com.quentinmoreels.todo.MainActivity
 import com.quentinmoreels.todo.R
 import com.quentinmoreels.todo.databinding.FragmentLoginBinding
+import com.quentinmoreels.todo.network.UserWebService
 import com.quentinmoreels.todo.userinfo.UserInfoViewModel
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val userInfoViewModel: UserInfoViewModel by viewModels()
+
+    private val userWebService: UserWebService by viewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
